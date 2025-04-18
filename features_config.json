@@ -1,0 +1,210 @@
+{
+    "features": [
+      {
+        "id": 0,
+        "keywords": ["hello", "hi", "hey"],
+        "response": "Hello! How can I assist you today?"
+      },
+      {
+        "id": 1,
+        "keywords": ["delivery", "arrive", "shipped"],
+        "response": "Your product is on its way! It'll be there soon."
+      },
+      {
+        "id": 2,
+        "keywords": ["recommend", "suggest", "best product"],
+        "response": "Sure, here are some popular product recommendations."
+      },
+      {
+        "id": 3,
+        "keywords": ["product details", "info", "description"],
+        "response": "Please provide the product name for more information."
+      },
+      {
+        "id": 4,
+        "keywords": ["cart", "add to cart", "remove from cart", "shopping cart"],
+        "response": "I can help you manage your cart."
+      },
+      {
+        "id": 5,
+        "keywords": ["track order", "order status", "where is my order"],
+        "response": "Please provide your order ID to track your order."
+      },
+      {
+        "id": 6,
+        "keywords": ["payment issue", "billing", "checkout", "price"],
+        "response": "Need help with payment? I’m here to assist you!"
+      },
+      {
+        "id": 7,
+        "keywords": ["support", "customer service", "help", "contact support"],
+        "response": "Connecting you to customer support right now."
+      },
+      {
+        "id": 8,
+        "keywords": ["language", "speak", "translate"],
+        "response": {
+          "en": "Hello! How can I assist you in English?",
+          "es": "¡Hola! ¿Cómo puedo ayudarte en español?",
+          "fr": "Bonjour! Comment puis-je vous aider en français?",
+          "hi": "नमस्ते! मैं आपकी किस प्रकार सहायता कर सकता हूँ?"
+        }
+      },
+      {
+        "id": 9,
+        "keywords": ["ai", "intelligence", "chatgpt", "smart assistant"],
+        "response": "Let me think... 🤖"
+      },
+      {
+        "id": 10,
+        "keywords": ["platform", "device", "browser", "cross-platform"],
+        "response": "This bot works seamlessly across all devices and platforms!"
+      },
+      {
+        "id": 11,
+        "keywords": ["community", "group", "whatsapp community"],
+        "response": "Join our WhatsApp community using this link!"
+      },
+      {
+        "id": 12,
+        "keywords": ["cancel order", "order cancel", "return order"],
+        "response": "To cancel your order, please provide your order ID."
+      },
+      {
+        "id": 13,
+        "keywords": ["refund", "money back", "return policy"],
+        "response": "For a refund, please follow our return policy or contact support."
+      },
+      {
+        "id": 14,
+        "keywords": ["discount", "coupon", "promo code"],
+        "response": "Check out our current deals and discounts on the homepage!"
+      },
+      {
+        "id": 15,
+        "keywords": ["availability", "out of stock", "stock"],
+        "response": "Let me check if the product is in stock for you."
+      },
+      {
+        "id": 16,
+        "keywords": ["gift card", "redeem gift card", "gift voucher"],
+        "response": "You can redeem your gift card at checkout. Let me know if you need further assistance."
+      },
+      {
+        "id": 17,
+        "keywords": ["delivery time", "shipping time", "when will my order arrive"],
+        "response": "Your order will arrive within the estimated delivery window provided during checkout."
+      },
+      {
+        "id": 18,
+        "keywords": ["order confirmation", "receipt", "invoice"],
+        "response": "I can send you a confirmation email with the order details."
+      },
+      {
+        "id": 19,
+        "keywords": ["returns", "exchange", "wrong product"],
+        "response": "For a return or exchange, please contact support or use the return portal."
+      },
+      {
+        "id": 20,
+        "keywords": ["update address", "change shipping address", "edit address"],
+        "response": "You can update your shipping address in your account settings."
+      },
+      {
+        "id": 21,
+        "keywords": ["size guide", "size chart", "fit"],
+        "response": "Please refer to the size guide on the product page for accurate measurements."
+      },
+      {
+        "id": 22,
+        "keywords": ["bulk purchase", "wholesale", "business order"],
+        "response": "For bulk purchases, please contact our business support team for special pricing."
+      },
+      {
+        "id": 23,
+        "keywords": ["product warranty", "guarantee", "return policy"],
+        "response": "All our products come with a standard warranty. Please check the product page for specific terms."
+      },
+      {
+        "id": 24,
+        "keywords": ["customer review", "feedback", "rating"],
+        "response": "We value your feedback! Please leave a review on the product page."
+      },
+      {
+        "id": 25,
+        "keywords": ["gift wrapping", "gift packaging", "present"],
+        "response": "We offer gift wrapping for an additional charge at checkout."
+      },
+      {
+        "id": 26,
+        "keywords": ["out of stock", "backorder", "product unavailable"],
+        "response": "The product is currently out of stock, but you can sign up for restock notifications."
+      },
+      {
+        "id": 27,
+        "keywords": ["payment options", "pay", "credit card", "debit card"],
+        "response": "We accept various payment methods including credit cards, debit cards, and digital wallets."
+      },
+      {
+        "id": 28,
+        "keywords": ["new arrivals", "latest products", "new products"],
+        "response": "Check out the new arrivals section to find the latest products we offer!"
+      },
+      {
+        "id": 29,
+        "keywords": ["tracking number", "track my shipment", "shipment status"],
+        "response": "Your tracking number is available in the order details."
+      },
+      {
+        "id": 30,
+        "keywords": ["sale", "clearance", "discounted products"],
+        "response": "Don't miss our ongoing sale! Check out the discounted products in the sale section."
+      },
+      {
+        "id": 31,
+        "keywords": ["return status", "refund status", "return progress"],
+        "response": "I can check the status of your return request. Please provide your order ID."
+      },
+      {
+        "id": 32,
+        "keywords": ["preorder", "reservation", "upcoming product"],
+        "response": "Pre-order is available for this product. Reserve yours now!"
+      },
+      {
+        "id": 33,
+        "keywords": ["product comparison", "compare", "similar products"],
+        "response": "You can compare products by clicking the 'Compare' button on the product pages."
+      },
+      {
+        "id": 34,
+        "keywords": ["delivery address", "change address", "shipping address"],
+        "response": "You can change your delivery address before confirming the order at checkout."
+      },
+      {
+        "id": 35,
+        "keywords": ["shipping cost", "delivery fee", "shipping charges"],
+        "response": "The shipping cost will be calculated based on your location at checkout."
+      },
+      {
+        "id": 36,
+        "keywords": ["order ID", "order number", "tracking my order"],
+        "response": "Please provide your order ID for tracking purposes."
+      },
+      {
+        "id": 37,
+        "keywords": ["payment failure", "transaction issue", "payment error"],
+        "response": "If you are facing a payment issue, please try again or contact support."
+      },
+      {
+        "id": 38,
+        "keywords": ["order modification", "change order", "update order"],
+        "response": "Once your order is placed, we cannot modify it. Please contact support for any changes."
+      },
+      {
+        "id": 39,
+        "keywords": ["track order with GPS", "order location", "live tracking"],
+        "response": "You can track your order live on the map using the tracking number."
+      }
+    ]
+  }
+  

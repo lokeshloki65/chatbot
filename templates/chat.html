@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .chat {
+        width: 100%;
+        max-width: 600px;
+      }
+      .card {
+        border: none;
+        border-radius: 25px;
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.3);
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .msg_head {
+        background: #111;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        color: #0ff;
+        box-shadow: 0 0 10px #0ff;
+        padding: 15px;
+      }
+
+      .user_img,
+      .user_img_msg {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid #0ff;
+      }
+
+      .online_icon {
+        background-color: #00ff00;
+        border-radius: 50%;
+        height: 12px;
+        width: 12px;
+        position: absolute;
+        top: 38px;
+        left: 38px;
+        border: 2px solid #fff;
+      }
+
+      .user_info span {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .user_info p {
+        font-size: 13px;
+        margin-bottom: 0;
+        color: #ccc;
+      }
+
+      .msg_card_body {
+        flex: 1;
+        padding: 15px;
+        background: transparent;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+      }
+
+      .msg_cotainer,
+      .msg_cotainer_send {
+        max-width: 70%;
+        padding: 10px 15px;
+        border-radius: 20px;
+        margin-top: 10px;
+        position: relative;
+        color: white;
+        font-weight: 500;
+        background: #1a1a1a;
+        box-shadow: 0 0 10px #0ff;
+        word-wrap: break-word;
+      }
+
+      .msg_cotainer_send {
+        background: #0f0f3f;
+      }
+
+      .msg_time,
+      .msg_time_send {
+        font-size: 11px;
+        position: absolute;
+        bottom: -20px;
+        color: #aaa;
+      }
+
+      .card-footer {
+        border-top: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        padding: 15px;
+        border-bottom-left-radius: 25px;
+        border-bottom-right-radius: 25px;
+      }
+
+      .send_btn {
+        background-color: #0ff;
+        border-radius: 30px;
+        padding: 10px 18px;
+        color: #000;
+        transition: all 0.3s ease;
+      }
+
+      .send_btn:hover {
+        background-color: #00e5ff;
+        box-shadow: 0 0 15px #00e5ff;
+      }
+
+      .type_msg {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 30px;
+        color: white;
+        padding-left: 20px;
+      }
+
+      .type_msg::placeholder {
+        color: #ccc;
+      }
+
+      .input-group-text {
+        border: none;
+      }
+
+      /* Smooth scrolling */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background-color: #0ff;
+        border-radius: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .card {
+          height: 95vh;
+          border-radius: 20px;
+        }
+
+        .msg_cotainer,
+        .msg_cotainer_send {
+          max-width: 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chat">
+      <div class="card">
+        <div class="card-header msg_head">
+          <div class="d-flex bd-highlight align-items-center">
+            <div class="img_cont">
+              <img
+                src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png"
+                class="rounded-circle user_img"
+              />
+              <span class="online_icon"></span>
+            </div>
+            <div class="user_info pl-3">
+              <span>ChatBot</span>
+              <p>Ask me anything!</p>
+            </div>
+          </div>
+        </div>
+        <div id="messageFormeight" class="card-body msg_card_body"></div>
+        <div class="card-footer">
+          <form id="messageArea" class="input-group">
+            <input
+              type="text"
+              id="text"
+              name="msg"
+              placeholder="Type your message..."
+              autocomplete="off"
+              class="form-control type_msg"
+              required
+            />
+            <div class="input-group-append">
+              <button
+                type="submit"
+                id="send"
+                class="input-group-text send_btn"
+              >
+                <i class="fas fa-location-arrow"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      function scrollToBottom() {
+        var messageBody = document.getElementById("messageFormeight");
+        messageBody.scrollTop = messageBody.scrollHeight;
+      }
+
+      $(document).ready(function () {
+        $("#messageArea").on("submit", function (event) {
+          const date = new Date();
+          const hour = date.getHours();
+          const minute = date.getMinutes();
+          const str_time = hour + ":" + (minute < 10 ? "0" + minute : minute);
+          var rawText = $("#text").val();
+
+          var userHtml =
+            '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
+            rawText +
+            '<span class="msg_time_send">' +
+            str_time +
+            '</span></div><div class="img_cont_msg"><img src="https://i.ibb.co/d5b84Xw/Untitled-design.png" class="rounded-circle user_img_msg"></div></div>';
+          $("#text").val("");
+          $("#messageFormeight").append(userHtml);
+          scrollToBottom();
+          $.ajax({
+            data: {
+              msg: rawText,
+            },
+            type: "POST",
+            url: "/get",
+          }).done(function (data) {
+            var botHtml = 
+              '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer">' +
+              data +
+              '<span class="msg_time">' +
+              str_time +
+              "</span></div></div>";
+            $("#messageFormeight").append($.parseHTML(botHtml));
+            scrollToBottom();
+          });
+          event.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>
